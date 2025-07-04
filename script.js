@@ -1,4 +1,3 @@
-
 const cards = document.getElementsByClassName("card");
 const dragCards = document.querySelectorAll("[draggable='true']")
 const deck = document.getElementById('deck')
