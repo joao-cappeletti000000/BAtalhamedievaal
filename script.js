@@ -192,7 +192,7 @@ function iniciarBatalha(){
         const log = document.getElementById('log-batalha');
         log.innerHTML +=  `<span>💥 Rodada Número ${numRodadas}!</span>`;
         setTimeout(() => {
-        log.innerHTML += `<span>🌀 ${atacaPrimeiro.nome} ataca primeiro!</span>`;
+        log.innerHTML += `<span>🔫 ${atacaPrimeiro.nome} ataca primeiro!</span>`;
         }, 500)
 
         // ATAQUE
@@ -204,7 +204,7 @@ function iniciarBatalha(){
         }, 500);
 
         setTimeout(() => {
-            log.innerHTML += `<span>💥 ${atacaPrimeiro.nome} desferiu um ataque de ${atacaPrimeiro.atk * multiplicadorCarta1} pontos em ${atacaSegundo.nome}!</span>`;
+            log.innerHTML += `<span>👊 ${atacaPrimeiro.nome} desferiu um ataque de ${atacaPrimeiro.atk * multiplicadorCarta1} pontos em ${atacaSegundo.nome}!</span>`;
             carta2.classList.remove('dano-recebido');
 
             const indexCarta = Cards.findIndex(c => c.nome === atacaSegundo.nome);
