@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Batalha Medieval</title>
+</head>
+<body>
+    <header>
+        <h1>🔪 Batalha Medieval do minecraft </h1>
+        <span>arraste os monstros ate a arena e veja quem é o mais forte</span>
+    </header>
+
+    <main>
+        <div id="arenas">
+            <div id="arena-player-1" class="arena">
+                <span>Arena de monstros 1</span>
+                <div class="arena-area" id="area1"></div>
+            </div>
+
+            <div id="log">
+                <h2 ">⚔️ Aguardando os monstros..⚔️</h2>
+
+                <div id="log-batalha"><span>Bem-vindo à Arena de monstros do minecraft!</span></div>
+
+                <div id="btn">
+                    <button id="btn-iniciar" onclick="iniciarBatalha()">Iniciar Batalha</button>
+                    <button id="btn-reiniciar" onclick="reiniciarBatalha()">Reiniciar Batalha</button>
+                </div>
+
+            </div>
+
+            <div id="arena-player-2" class="arena">
+                <span>Arena do Guerreiro 2</span>
+                <div class="arena-area" id="area2"></div>
+            </div>
+        </div>
+
+        <div id="deck">
+            <h3>Escolha seus Guerreiros</h3>
+            <div id="cards">
+            <!-- Card 1 -->
+            <div class="card" id="card1" draggable="true">
+                <h2 id="name-card-1"><strong>zombie</strong></h2>
+                <div id="status-card-1" class="status">
+                    <img src="img/Wither_JE2_BE2-removebg-preview.png" alt="">
+                    <div><span>Ataque: </span> <span id="atk-card-1" class="atk-card">000</span></div>
+                    <div><span>Vida: </span> <span id="hp-card-1" class="hp-card">000</span></div>
+                    <div><span>Velocidade: </span> <span id="spd-card-1" class="spd-card">000</span></div>
+                </div>
+                <div id="card-type-1" class="type-card">type</div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card" id="card2" draggable="true">
+                <h2 id="name-card-2"><strong>Nome</strong></h2>
+                <div id="status-card-2" class="status">
+                    <img src="img/Spider_JE4_BE3-removebg-preview.png" alt="">
+                    <div><span>Ataque: </span> <span id="atk-card-2" class="atk-card">000</span></div>
+                    <div><span>Vida: </span> <span id="hp-card-2" class="hp-card">000</span></div>
+                    <div><span>Velocidade: </span> <span id="spd-card-2" class="spd-card">000</span></div>
+                </div>
+                <div id="card-type-2" class="type-card">type</div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card" id="card3" draggable="true">
+                <h2 id="name-card-3"><strong>Nome</strong></h2>
+                <div id="status-card-3" class="status">
+                    <img src="img/slime-removebg-preview.png" alt="">
+                    <div><span>Ataque: </span> <span id="atk-card-3" class="atk-card">000</span></div>
+                    <div><span>Vida: </span> <span id="hp-card-3" class="hp-card">000</span></div>
+                    <div><span>Velocidade: </span> <span id="spd-card-3" class="spd-card">000</span></div>
+                </div>
+                <div id="card-type-3" class="type-card">type</div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card" id="card4" draggable="true">
+                <h2 id="name-card-4"><strong>Nome</strong></h2>
+                <div id="status-card-4" class="status">
+                    <img src="img/Ghast_shooting_JE2_BE2-removebg-preview.png" alt="">
+                    <div><span>Ataque: </span> <span id="atk-card-4" class="atk-card">000</span></div>
+                    <div><span>Vida: </span> <span id="hp-card-4" class="hp-card">000</span></div>
+                    <div><span>Velocidade: </span> <span id="spd-card-4" class="spd-card">000</span></div>
+                </div>
+                <div id="card-type-4" class="type-card">type</div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="card" id="card5" draggable="true">
+                <h2 id="name-card-5"><strong>Nome</strong></h2>
+                <div id="status-card-5" class="status">
+                    <img src="img/esqueleto-removebg-preview.png" alt="">
+                    <div><span>Ataque: </span> <span id="atk-card-5" class="atk-card">000</span></div>
+                    <div><span>Vida: </span> <span id="hp-card-5" class="hp-card">000</span></div>
+                    <div><span>Velocidade: </span> <span id="spd-card-5" class="spd-card">000</span></div>
+                </div>
+                <div id="card-type-5" class="type-card">type</div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="card" id="card6" draggable="true">
+                <h2 id="name-card-6"><strong>Nome</strong></h2>
+                <div id="status-card-6" class="status">
+                    <img src="img/Enderman-removebg-preview.png" alt="">
+                    <div><span>Ataque: </span> <span id="atk-card-6" class="atk-card">000</span></div>
+                    <div><span>Vida: </span> <span id="hp-card-6" class="hp-card">000</span></div>
+                    <div><span>Velocidade: </span> <span id="spd-card-6" class="spd-card">000</span></div>
+                </div>
+                <div id="card-type-6" class="type-card">type</div>
+            </div>
+
+                <!-- Card 7 -->
+            <div class="card" id="card7" draggable="true">
+                <h2 id="name-card-7"><strong>Nome</strong></h2>
+                <div id="status-card-7" class="status">
+                    <img src="img/Elder_Guardian-removebg-preview.png" alt="">
+                    <div><span>Ataque: </span> <span id="atk-card-7" class="atk-card">000</span></div>
+                    <div><span>Vida: </span> <span id="hp-card-7" class="hp-card">000</span></div>
+                    <div><span>Velocidade: </span> <span id="spd-card-7" class="spd-card">000</span></div>
+                </div>
+                <div id="card-type-7" class="type-card">type</div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="card" id="card8" draggable="true">
+                <h2 id="name-card-8"><strong>Nome</strong></h2>
+                <div id="status-card-8" class="status">
+                    <img src="img/creeper.png" alt="" >
+                    <div><span>Ataque: </span> <span id="atk-card-8" class="atk-card">000</span></div>
+                    <div><span>Vida: </span> <span id="hp-card-8" class="hp-card">000</span></div>
+                    <div><span>Velocidade: </span> <span id="spd-card-8" class="spd-card">000</span></div>
+                </div>
+                <div id="card-type-8" class="type-card">type</div>
+            </div>
+
+            <!-- Card 9 -->
+            <div class="card" id="card9" draggable="true">
+                <h2 id="name-card-9"><strong>Nome</strong></h2>
+                <div id="status-card-9" class="status">
+                    <img src="img/BlazeNoParticles-removebg-preview.png" alt="">
+                    <div><span>Ataque: </span> <span id="atk-card-9" class="atk-card">000</span></div>
+                    <div><span>Vida: </span> <span id="hp-card-9" class="hp-card">000</span></div>
+                    <div><span>Velocidade: </span> <span id="spd-card-9" class="spd-card">000</span></div>
+                </div>
+                <div id="card-type-9" class="type-card">type</div>
+            </div>
+
+            <!-- Card 10 -->
+            <div class="card" id="card10" draggable="true">
+                <h2 id="name-card-10"><strong>Nome</strong></h2>
+                <div id="status-card-10" class="status">
+                    <img src="img/AZZZZZZZZ-removebg-preview.png" alt="">
+                    <div><span>Ataque: </span> <span id="atk-card-10" class="atk-card">000</span></div>
+                    <div><span>Vida: </span> <span id="hp-card-10" class="hp-card">000</span></div>
+                    <div><span>Velocidade: </span> <span id="spd-card-10" class="spd-card">000</span></div>
+                </div>
+                <div id="card-type-10" class="type-card">type</div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

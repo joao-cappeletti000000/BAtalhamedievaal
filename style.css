@@ -1,0 +1,320 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bg-color: #4e2a18;
+    --bg-secundario: #362112;
+    --bg-terciario: #208a00;
+    --border: #6f310b;
+    --border-secundario: #76350d;
+    --cor-texto-clara: #cfa782;
+    --cor-texto-medio: #ba8e09;
+}
+
+
+body{
+    height: 100vh;
+    background: var(--bg-color);
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 25px;
+    background: var(--bg-terciario);
+    color: #fee400;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+
+
+
+header span{
+    color: var(--cor-texto-clara);
+}
+
+#arenas{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.arena{
+    background: var(--bg-secundario);
+    color: var(--cor-texto-medio);
+    border: 2px solid var(--border);
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+.arena-area{
+    min-height: 100px;
+    padding: 5px;
+    width: 200px;
+    color: #793509;
+    border: 2px dashed var(--border);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#log{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+#log h2{
+    background: #5b4d46;
+    color: #aea099;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#log-batalha{
+    width: 450px;
+    height: 100px;
+    color: var(--cor-texto-clara);
+    background-color: #351d10;
+    border: 3px solid var(--border-secundario);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+#log button{
+    border: none;
+    border-radius: 15px;
+    width: 150px;
+    height: 50px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+#btn-iniciar{
+    background: linear-gradient(135deg, #793509, #d0792d);
+}
+
+
+#btn-reiniciar{
+    background: linear-gradient(135deg, #00000069, #454545);
+}
+
+#deck{
+    background: #382212;
+    border: 5px solid var(--border-secundario);
+    border-radius: 25px;
+    margin: 25px;
+    padding: 15px;
+    height: 500px;
+    overflow: auto;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#deck h3{
+    color: var(--cor-texto-medio);
+    margin-top: 400px;
+}
+
+#cards{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: 25px;
+    column-gap: 15px;
+}
+
+.card{
+    height: 250px;
+    width: 175px;
+    border-radius: 15px;
+    background: #ece0ba;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    cursor: grab;
+    user-select: none;
+    position: relative;
+}
+
+.card h2{
+    background-color: var(--bg-terciario);
+    color: #ece0ba;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-img{
+    height: 115px;
+    font-size: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.status{
+    display: flex;
+    flex-direction: column;
+    background: #e3cfa8;
+    border: 2px solid #d6bb93;
+    border-radius: 10px;
+    margin: 0px 10px;
+    padding: 5px;
+    gap: 5px;
+}
+
+.selecao-guerreiros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    overflow: hidden;
+    max-height: none;
+    padding: 20px;
+}
+
+.status div{
+    display: flex;
+    justify-content: space-between;
+    color: #94744e;
+}
+
+.atk-card, .hp-card, .spd-card{
+    padding: 2px;
+    border-radius: 5px;
+    color: #fff;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    font-size: .8rem;
+}
+
+.atk-card{
+    background: #f30439;
+}
+
+.hp-card{
+    background: #5641e5;
+}
+
+.spd-card{
+    background: #d8c833;
+}
+
+.type-card {
+    display: none;
+}
+
+@keyframes dano {
+0% { 
+    box-shadow: 0px 0px 32px rgba(255, 0, 0, 1);
+    scale: 1.2;
+}
+
+50%{
+    box-shadow: 0px 0px 16px rgba(255, 0, 0, 1);
+    scale: 1.1;
+}
+
+100% { 
+    box-shadow: 0 0 0 rgb( 0, 0, 0);
+    scale: 1;
+}
+}
+
+@keyframes vencedor{
+0% { 
+    box-shadow: 0px 0px 0px rgb(0, 0, 0);
+}
+
+50%{
+    box-shadow: 0px 0px 16px rgb(255, 238, 0);
+}
+
+100% { 
+    box-shadow: 0 0 32px rgb(255, 238, 0);
+}
+}
+
+.vencedor{
+    animation: vencedor 0.2s ease;
+    animation-fill-mode: forwards;
+    animation-delay: 250ms;
+}
+
+.dano-recebido {
+    animation: dano 0.s ease;
+}
+
+@media (max-width: 1032px){
+    .card{
+        width: 150px;
+    }
+}
+
+@media (max-width: 921px){
+    #log-batalha{
+        width: 350px;
+    }
+
+    #waiting-msg{
+        width: 275px;
+        font-size: 1.1rem;
+    }
+
+    .card{
+        width: 125px;
+    }
+}
+
+@media (max-width: 821px){
+    .arena{
+        width: 200px;
+        height: 225px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .arena-area{
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 721px){
+    #arenas{
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    #log{
+        width: 100%;
+    }
+
+    #arena-player-1{
+        order: 1;
+    }
+}
